@@ -121,6 +121,10 @@ def bfs(starting_room, destination_room, graph):
 # create the graph
 room_graph, room_visited = create_graph(current_room, graph, visited)
 
+for item in range(len(room_visited) - 1):
+    path = bfs(room_visited[item], room_visited[item + 1], graph)
+    traversal_path.extend(path)
+
 
 # TRAVERSAL TEST - DO NOT MODIFY
 visited_rooms = set()
